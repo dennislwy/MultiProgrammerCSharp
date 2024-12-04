@@ -26,7 +26,7 @@ To build the CLI tool, follow these steps:
 
 2. Restore the dependencies and build the project:
     ```sh
-    dotnet build -o bin
+    dotnet build -c Release -o bin
     ```
 
 3. Make sure copy all necessary C17MultiProgrammer files to 'bin' folder

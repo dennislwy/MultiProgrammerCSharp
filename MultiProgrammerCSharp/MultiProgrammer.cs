@@ -23,9 +23,9 @@ public static class MultiProgrammer
     /// <param name="pTargetInfo">Target MCU information</param>
     /// <param name="pUserInfo">User program information</param>
     /// <param name="userProgramCheckSum">User program checksum. Calculates and stores the user program checksum.</param>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode InitializeTargetInfo(
+    public static extern ReturnValue InitializeTargetInfo(
         ref TargetInfo pTargetInfo,
         ref UserInfo pUserInfo,
         out uint userProgramCheckSum // unsigned long
@@ -37,9 +37,9 @@ public static class MultiProgrammer
     /// <remarks>
     /// int ReleaseTargetInfo(void);
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode ReleaseTargetInfo();
+    public static extern ReturnValue ReleaseTargetInfo();
 
     /// <summary>
     /// Connects an ICDmini to the corresponding specified ICD handle.
@@ -50,9 +50,9 @@ public static class MultiProgrammer
     /// This function checks to confirm that GetConnectedICD() has been executed.
     /// This function does not return control until success or failure is confirmed
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode OpenIcdConnection(
+    public static extern ReturnValue OpenIcdConnection(
         long icdHandle // signed long
     );
 
@@ -65,9 +65,9 @@ public static class MultiProgrammer
     /// This function checks to confirm that GetConnectedICD() has been executed.
     ///This function does not return control until success or failure is confirmed
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode CloseIcdConnection(
+    public static extern ReturnValue CloseIcdConnection(
         long icdHandle // signed long
     );
 
@@ -81,9 +81,9 @@ public static class MultiProgrammer
     /// This function returns control immediately after calling.
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode ResetTarget(
+    public static extern ReturnValue ResetTarget(
         long icdHandle // signed long
     );
 
@@ -97,9 +97,9 @@ public static class MultiProgrammer
     /// This function returns control immediately after calling.
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode CheckTargetConnection(
+    public static extern ReturnValue CheckTargetConnection(
         long icdHandle // signed long
     );
 
@@ -123,9 +123,9 @@ public static class MultiProgrammer
     /// This function returns control immediately after calling.
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode StartOperation(
+    public static extern ReturnValue StartOperation(
         long icdHandle,
         long icdOperation,
         long timeOut,
@@ -138,14 +138,14 @@ public static class MultiProgrammer
     /// Fetches the processing status for the ICDmini corresponding to the specified ICD handle.
     /// </summary>
     /// <param name="icdHandle">ICD handle</param>
-    /// <param name="serialNumberSize">Output: Serial number size (0 indicates matching).</param>
-    /// <param name="serialNumber">Output: Serial number read from the target system.</param>
+    /// <param name="serialNumberSize">Serial number size (0 indicates matching).</param>
+    /// <param name="serialNumber">Serial number read from the target system.</param>
     /// <remarks>
     /// int GetStatus(long icdHandle, int *serialNumberSize, unsigned char *serialNumber);
     /// </remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode GetStatus(
+    public static extern ReturnValue GetStatus(
         long icdHandle,
         out int serialNumberSize, // int*
         [Out] byte[] serialNumber // unsigned char*
@@ -154,12 +154,12 @@ public static class MultiProgrammer
     /// <summary>
     /// Returns a text string in response to a return code.
     /// </summary>
-    /// <param name="returnCode">Input: Return code.</param>
-    /// <param name="returnedString">Output: Text string corresponding to the return code. Must have at least 256 bytes of space.</param>
+    /// <param name="returnCode">Return code.</param>
+    /// <param name="returnedString">Text string corresponding to the return code. Must have at least 256 bytes of space.</param>
     /// <remarks>int GetString(int returnCode, char * returnedString);</remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode GetString(
+    public static extern ReturnValue GetString(
         int returnCode,
         [Out] StringBuilder returnedString // char*
     );
@@ -171,9 +171,9 @@ public static class MultiProgrammer
     /// <param name="connectedCount">Number of ICDminis connected.</param>
     /// <param name="pIcdInfo">ICDmini information.</param>
     /// <remarks>int GetConnectedICD (long maxCount, long *connectedCount, struct icdInfo *pIcdInfo);</remarks>
-    /// <returns>Returns code indicating the result status</returns>
+    /// <returns>Returns value indicating the result status</returns>
     [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
-    public static extern ReturnCode GetConnectedICD(
+    public static extern ReturnValue GetConnectedIcd(
         long maxCount,
         out long connectedCount, // long*
         [Out] IcdInfo[] pIcdInfo // struct icdInfo*

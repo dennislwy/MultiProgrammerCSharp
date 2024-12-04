@@ -3,7 +3,7 @@
 /// <summary>
 /// Returns code indicating the result status. Please refer to Appendix A.2.9
 /// </summary>
-public enum ReturnCode
+public enum ReturnValue
 {
     /// <summary>Normally ended.</summary>
     OK = 0x00,

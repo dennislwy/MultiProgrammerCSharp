@@ -99,7 +99,12 @@ Here are some examples of how to use the MultiProgrammer CLI Tool:
     MultiProgrammerCli.exe GetStatus --icdHandle <icdHandle>
     ```
 
-8. **Get Connected ICDs**:
+8. **Get String**:
+    ```sh
+    MultiProgrammerCli.exe GetString -rc 18
+    ```
+
+9. **Get Connected ICDs**:
     ```sh
     MultiProgrammerCli.exe GetConnectedIcd --maxCount <maxCount>
     ```

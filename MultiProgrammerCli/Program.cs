@@ -31,7 +31,7 @@ internal static class Program
         rootCommand.AddCommand(GetConnectedIcdCmd.Create());
 
 #if DEBUG
-        args = new[] { "GetString", "-rc", "0" };
+        args = new[] { "GetString", "-rc", "18" };
 #endif
 
         // Invoke the command-line parser and execute the appropriate command

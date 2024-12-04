@@ -24,7 +24,7 @@ public static class MultiProgrammer
     /// <param name="pUserInfo">User program information</param>
     /// <param name="userProgramCheckSum">User program checksum. Calculates and stores the user program checksum.</param>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "InitializeTargetInfo", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue InitializeTargetInfo(
         ref TargetInfo pTargetInfo,
         ref UserInfo pUserInfo,
@@ -38,7 +38,7 @@ public static class MultiProgrammer
     /// int ReleaseTargetInfo(void);
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "ReleaseTargetInfo", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue ReleaseTargetInfo();
 
     /// <summary>
@@ -51,7 +51,7 @@ public static class MultiProgrammer
     /// This function does not return control until success or failure is confirmed
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "OpenIcdConnection", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue OpenIcdConnection(
         long icdHandle // signed long
     );
@@ -66,7 +66,7 @@ public static class MultiProgrammer
     ///This function does not return control until success or failure is confirmed
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "CloseIcdConnection", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue CloseIcdConnection(
         long icdHandle // signed long
     );
@@ -82,7 +82,7 @@ public static class MultiProgrammer
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "ResetTarget", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue ResetTarget(
         long icdHandle // signed long
     );
@@ -98,7 +98,7 @@ public static class MultiProgrammer
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "CheckTargetConnection", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue CheckTargetConnection(
         long icdHandle // signed long
     );
@@ -124,7 +124,7 @@ public static class MultiProgrammer
     /// This function requires monitoring of processing completion with GetStatus().
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "StartOperation", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue StartOperation(
         long icdHandle,
         long icdOperation,
@@ -144,7 +144,7 @@ public static class MultiProgrammer
     /// int GetStatus(long icdHandle, int *serialNumberSize, unsigned char *serialNumber);
     /// </remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "GetStatus", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue GetStatus(
         long icdHandle,
         out int serialNumberSize, // int*
@@ -158,7 +158,7 @@ public static class MultiProgrammer
     /// <param name="returnedString">Text string corresponding to the return code. Must have at least 256 bytes of space.</param>
     /// <remarks>int GetString(int returnCode, char * returnedString);</remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "GetString", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue GetString(
         int returnCode,
         [Out] StringBuilder returnedString // char*
@@ -172,7 +172,7 @@ public static class MultiProgrammer
     /// <param name="pIcdInfo">ICDmini information.</param>
     /// <remarks>int GetConnectedICD (long maxCount, long *connectedCount, struct icdInfo *pIcdInfo);</remarks>
     /// <returns>Returns value indicating the result status</returns>
-    [DllImport("MultiProgrammer.dll", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("MultiProgrammer.dll", EntryPoint = "GetConnectedICD", CallingConvention = CallingConvention.Cdecl)]
     public static extern ReturnValue GetConnectedIcd(
         long maxCount,
         out long connectedCount, // long*

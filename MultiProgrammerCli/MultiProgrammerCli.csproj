@@ -11,6 +11,7 @@
         <AssemblyVersion>1.0.2412.0421</AssemblyVersion>
         <FileVersion>$(AssemblyVersion)</FileVersion>
         <Version>$(AssemblyVersion)</Version>
+        <Platforms>x86</Platforms>
     </PropertyGroup>
 
     <ItemGroup>

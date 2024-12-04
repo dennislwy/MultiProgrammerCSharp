@@ -29,7 +29,7 @@ public static class GetStringCmd
         };
 
         // Set the handler for the command
-        getStringCommand.SetHandler((int returnCode) =>
+        getStringCommand.SetHandler((returnCode) =>
         {
             try
             {

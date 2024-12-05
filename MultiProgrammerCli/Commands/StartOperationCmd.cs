@@ -35,13 +35,13 @@ public static class StartOperationCmd
 
         // Define the option for the serial write address
         var serialWriteAddressOption = new Option<uint>(
-            new[] { "--serialWriteAddress", "-address" },
+            new[] { "--serialWriteAddress", "-a" },
             "Address for writing serial number (0x0-0xfffffc)")
         { IsRequired = true };
 
         // Define the option for the serial number size
         var serialNumberSizeOption = new Option<int>(
-            new[] { "--serialNumberSize", "-size" },
+            new[] { "--serialNumberSize", "-s" },
             "Serial number size (Bytes). If 0, no serial number is written")
         { IsRequired = true };
 

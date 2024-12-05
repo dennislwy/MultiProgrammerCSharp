@@ -28,5 +28,5 @@ public struct UserInfo
     /// <remarks>
     /// Corresponding information if the user program is divided into multiple address areas
     /// </remarks>
-    public IntPtr UserParam; // Pointer to an array of UserProgramParam
+    public IntPtr UserProgramParam; // Pointer to an array of UserProgramParam
 }

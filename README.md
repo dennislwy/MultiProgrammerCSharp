@@ -101,7 +101,7 @@ Here are some examples of how to use the MultiProgrammer CLI Tool:
 
 8. **Get String**:
     ```sh
-    MultiProgrammerCli.exe GetString -rc 18
+    MultiProgrammerCli.exe GetString --returnCode 18
     ```
 
 9. **Get Connected ICDs**:

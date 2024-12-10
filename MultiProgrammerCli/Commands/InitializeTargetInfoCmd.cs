@@ -118,8 +118,8 @@ public static class InitializeTargetInfoCmd
                 var returnValue = MultiProgrammer.InitializeTargetInfo(ref targetInfo, ref userInfo, out uint userProgramCheckSum);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}\n");
-                Console.WriteLine($"User Program CheckSum: {userProgramCheckSum}");
+                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"User Program CheckSum: {userProgramCheckSum}\n");
             }
             catch (Exception ex)
             {

@@ -27,7 +27,7 @@ public static class ReleaseTargetInfoCmd
                 var returnValue = MultiProgrammer.ReleaseTargetInfo();
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"Return value: {returnValue}\n");
             }
             catch (Exception ex)
             {

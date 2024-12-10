@@ -40,8 +40,8 @@ public static class GetStringCmd
                 var returnValue = MultiProgrammer.GetString(returnCode, stringBuilder);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}\n");
-                Console.WriteLine($"ReturnedString: {stringBuilder}");
+                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"ReturnedString: {stringBuilder}\n");
 
             }
             catch (Exception ex)

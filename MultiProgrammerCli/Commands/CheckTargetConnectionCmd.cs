@@ -33,7 +33,7 @@ public static class CheckTargetConnectionCmd
                 var returnValue = MultiProgrammer.CheckTargetConnection(icdHandle);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"Return value: {returnValue}\n");
             }
             catch (Exception ex)
             {

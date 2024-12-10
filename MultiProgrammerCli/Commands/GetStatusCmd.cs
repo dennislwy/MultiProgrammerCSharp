@@ -39,9 +39,9 @@ public static class GetStatusCmd
                 var returnValue = MultiProgrammer.GetStatus(icdHandle, out int serialNumberSize, serialNumber);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}\n");
+                Console.WriteLine($"Return value: {returnValue}");
                 Console.WriteLine($"Serial Number Size: {serialNumberSize}");
-                Console.WriteLine($"Serial Number: {BitConverter.ToString(serialNumber, 0, serialNumberSize)}");
+                Console.WriteLine($"Serial Number: {BitConverter.ToString(serialNumber, 0, serialNumberSize)}\n");
             }
             catch (Exception ex)
             {

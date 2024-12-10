@@ -36,7 +36,7 @@ public static class CloseIcdConnectionCmd
                 var returnValue = MultiProgrammer.CloseIcdConnection(icdHandle);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"Return value: {returnValue}\n");
             }
             catch (Exception ex)
             {

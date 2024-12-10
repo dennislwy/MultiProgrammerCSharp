@@ -37,7 +37,7 @@ public static class ResetTargetCmd
                 var returnValue = MultiProgrammer.ResetTarget(icdHandle);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}");
+                Console.WriteLine($"Return value: {returnValue}\n");
             }
             catch (Exception ex)
             {

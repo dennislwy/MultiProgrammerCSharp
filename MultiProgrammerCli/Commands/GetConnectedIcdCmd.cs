@@ -40,7 +40,7 @@ public static class GetConnectedIcdCmd
                 var returnValue = MultiProgrammer.GetConnectedIcd(maxCount, out long connectedCount, icdInfoArray);
 
                 // Output the result
-                Console.WriteLine($"Return value: {returnValue}\n");
+                Console.WriteLine($"Return value: {returnValue}");
                 Console.WriteLine($"Connected ICD Count: {connectedCount}");
 
                 // Loop through the connected ICDs and output their information
@@ -52,6 +52,7 @@ public static class GetConnectedIcdCmd
                     Console.WriteLine($"  Version: {icdInfoArray[i].IcdVersion}");
                     Console.WriteLine($"  SerialNumber: {icdInfoArray[i].IcdSerialNumber}");
                 }
+                Console.WriteLine("");
             }
             catch (Exception ex)
             {

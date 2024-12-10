@@ -44,14 +44,14 @@ public static class GetConnectedIcdCmd
                 Console.WriteLine($"Connected ICD Count: {connectedCount}");
 
                 // Loop through the connected ICDs and output their information
-                for (var i = 0; i < connectedCount; i++)
-                {
-                    Console.WriteLine($"ICD {i + 1}:");
-                    Console.WriteLine($"  Handle: {icdInfoArray[i].IcdHandle}");
-                    Console.WriteLine($"  DLL version: {icdInfoArray[i].IcdVersion}");
-                    Console.WriteLine($"  Version: {icdInfoArray[i].IcdVersion}");
-                    Console.WriteLine($"  SerialNumber: {icdInfoArray[i].IcdSerialNumber}");
-                }
+                // for (var i = 0; i < connectedCount; i++)
+                // {
+                //     Console.WriteLine($"ICD {i + 1}:");
+                //     Console.WriteLine($"  Handle: {icdInfoArray[i].IcdHandle}");
+                //     Console.WriteLine($"  DLL version: {icdInfoArray[i].IcdVersion}");
+                //     Console.WriteLine($"  Version: {icdInfoArray[i].IcdVersion}");
+                //     Console.WriteLine($"  SerialNumber: {icdInfoArray[i].IcdSerialNumber}");
+                // }
                 Console.WriteLine("");
             }
             catch (Exception ex)

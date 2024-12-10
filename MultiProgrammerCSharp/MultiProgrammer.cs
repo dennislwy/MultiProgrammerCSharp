@@ -176,6 +176,7 @@ public static class MultiProgrammer
     public static extern ReturnValue GetConnectedIcd(
         long maxCount,
         out long connectedCount, // long*
-        [Out] IcdInfo[] pIcdInfo // struct icdInfo*
+        [In, Out] IcdInfo[] pIcdInfo // struct icdInfo*
+                                     // reference: https://learn.microsoft.com/en-us/dotnet/framework/interop/marshalling-different-types-of-arrays
     );
 }

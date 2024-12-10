@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 public struct IcdInfo
 {
     /// <summary>ICD handle</summary>
-    public long IcdHandle; 
+    public long IcdHandle;
 
     // <summary>Number of icdminix.dll used(icdmini2.dll=2, icdmini3.dll=3)</summary>
     public int IcdDllVersion;
@@ -17,8 +17,19 @@ public struct IcdInfo
     /// <summary>ICD version</summary>
     [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 8)]
     public string IcdVersion; // ICD version
-    
+
     /// <summary>Serial number</summary>
     [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 50)]
     public string IcdSerialNumber; // Serial number
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IcdInfo"/> struct.
+    /// </summary>
+    public IcdInfo(long icdHandle, int icdDllVersion, string icdVersion, string icdSerialNumber)
+    {
+        IcdHandle = icdHandle;
+        IcdDllVersion = icdDllVersion;
+        IcdVersion = icdVersion;
+        IcdSerialNumber = icdSerialNumber;
+    }
 }
